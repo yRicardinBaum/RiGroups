@@ -11,8 +11,6 @@
 /.gradle/
 /out/
 /gradle/
-gradle/wrapper
-gradle.properties
 
 # eclipse files
 .classpath
