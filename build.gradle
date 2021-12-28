@@ -1,17 +1,10 @@
-import org.apache.tools.ant.filters.ReplaceTokens
-
-
 plugins {
     id 'java'
-
-    id 'com.github.johnrengelman.shadow' version '6.1.0'
 }
 
 group 'com.br.ridev.plugin'
 version '2.0'
 
-
-tasks.build.dependsOn('shadowJar')
 
 repositories {
     mavenCentral()
@@ -23,12 +16,6 @@ repositories {
             includeGroup 'org.spigotmc'
         }
     }
-    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
-
-    maven { url = "https://repo.codemc.org/repository/maven-public/" }
-
-    maven { url = 'https://jitpack.io/' }
 }
 
 dependencies {
@@ -38,16 +25,3 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
-processResources {
-    from(sourceSets.main.resources.srcDirs) {
-        filter ReplaceTokens, tokens: [version: version]
-    }
-}
-
-compileJava {
-    options.encoding = 'UTF-8'
-}
-
-shadowJar {
-    archiveName("${project.name}-${project.version}.jar")
-}
