@@ -10,7 +10,6 @@
 /build/
 /.gradle/
 /out/
-/gradle/
 
 # eclipse files
 .classpath
